@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Document</title>
+   <style>
+    *{
+        padding: 0px;
+        margin: 0px;
+    }
+    body{
+        width: 100%;
+        height: 100vh;
+        background-image: linear-gradient(75deg,rgba(126, 252, 0, 0.804),rgba(0, 128, 0, 0.816));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #cont{
+        width: 60%;
+        height: 400px;
+        background-color: rgba(135, 207, 235, 0.853);
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        border-radius: 5px;
+    }
+    .input{
+        width: 100px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 20px;
+        border: 10px ridge rgba(255, 166, 0, 0.879);
+        border-radius: 5px;
+        background-color: rgba(126, 252, 0, 0.869);
+        text-align: center;
+        cursor: pointer;
+        box-shadow: 2px 2px 2px black;
+        font-size: 40px;
+    }
+    #button{
+        width: 40%;
+        height: 50px;
+        position:absolute;
+        bottom: 80px;
+        background-color: purple;
+        border-radius: 100px;
+        font-size: 30PX;
+        font-weight: bold;
+        color: white;
+        letter-spacing: 5px;
+        box-shadow: 2px 2px 2px black;
+
+    }
+    #button:hover{
+    transform: scale(1.2);
+    }
+    #bgimg{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url(./4.jpg);
+        background-size: 100%;
+        display: none;
+    }
+    #text{
+        font-size: 7vw;
+        color: rgb(226, 237, 19);
+    }
+   </style>
+</head>
+<body>
+    <div id="cont">
+         <input class="input" type="text" id="a">
+         <input class="input" type="text" id="b">
+         <input class="input" type="text" id="c">
+         <input class="input" type="text" id="d">
+         <input id="button" value="JackPot" onclick="inputone()" type="button">
+    </div>
+    <div id="bgimg">
+        <h1 id="text">Congratulations</h1>
+    </div>
+
+    <script>
+        function inputone()
+        {
+            var num1=Math.floor(Math.random()*10);
+            document.getElementById("a").value=num1;
+            var num2=Math.floor(Math.random()*10);
+            document.getElementById("b").value=num2;
+            var num3=Math.floor(Math.random()*10);
+            document.getElementById("c").value=num3;
+            var num4=Math.floor(Math.random()*10);
+            document.getElementById("d").value=num4;
+        
+        
+
+            if(num1==num2==num3==num4)
+            {
+                document.getElementById("bgimg").style.display="flex"
+                document.getElementById("cont").style.display="none"
+            }
+        }
+        
+
+    
+        
+
+
+    </script>
+</body>
+</html>
